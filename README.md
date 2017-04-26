@@ -6,7 +6,7 @@ MTN.*NIX.11 Automated Environment Configuration Management
 Home Task
 ---
 
-Using base docker image ***sbeliakou/centos:6.7***
+Using base docker image ***sbeliakou/centos:7.2***
 
 1. Wiht ```Dockerfiles```:
     - Create Docker Image of ```nginx``` ([web.Dockerfile](/web.Dockerfile))
