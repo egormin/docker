@@ -18,3 +18,20 @@ $ docker run --rm sbeliakou/ansible:2.2.1 ansible --version
 $ alias a='docker run --rm -v $(pwd):$(pwd) -w $(pwd) sbeliakou/ansible:2.2.1 ansible-playbook -vv'
 $ aa playbook.yml
 ```
+
+### Using Docker in Jenkinsfile
+
+```
+  stage('Run Tests') {
+    try {
+      dir('webapp') {
+        sh "mvn test"
+        docker.build("sbeliakou/my_container:${env.BUILD_NUMBER}").push()
+      }
+    } catch (error) {
+
+    } finally {
+      junit '**/target/surefire-reports/*.xml'
+    }
+  }
+```
