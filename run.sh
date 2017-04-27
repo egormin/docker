@@ -4,5 +4,4 @@ docker build -t application -f application/application.Dockerfile .
 docker run -d --name app application
 docker run -d --name tomcat --volumes-from app tomcat
 docker run -d --name proxy -p 8080:80  --link tomcat:tomcat web
-curl -ILvk localhost:8080
 curl -ILvk localhost:8080/sample/
