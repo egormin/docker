@@ -16,12 +16,11 @@ Using base docker image ***sbeliakou/centos:7.2***
     - Create Docker Image (Data Volume) with [```hello world```](https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war) application for Tomcat ([application.Dockerfile](application.Dockerfile))
     `docker build -t application -f application/application.Dockerfile .`
     - Run these Images so that [http://localhost/sample](http://localhost/sample) shows ```hello world``` page
-    ```
-docker run -d --name app application
-docker run -d --name tomcat --volumes-from app tomcat
-docker run -d --name proxy -p 8080:80  --link tomcat web
-curl localhost:8080
-    ```
+    `docker run -d --name app application`
+    `docker run -d --name tomcat --volumes-from app tomcat`
+    `docker run -d --name proxy -p 8080:80  --link tomcat web`
+    `curl localhost:8080`
+
     - ```Nginx``` container forwards http requests to ```Tomcat``` container; Only ```nginx``` container exposes port (80)
 2. With ```docker-compose```:
     - Create ```docker-compose.yml``` file to build containers from previos task
