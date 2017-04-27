@@ -1,0 +1,18 @@
+version: '2'
+services:
+ application-cont:
+  build:
+   context: .
+   dockerfile: application.Dockerfile
+ tomcat-cont:
+  build:
+   context: .
+   dockerfile: tomcat.Dockerfile
+  depends_on: [ "application-cont" ]
+  volumes_from: [ "application-cont" ]
+ nginx-cont:
+  build:
+   context: .
+   dockerfile: web.Dockerfile
+  ports: [ "80:80" ]
+  depends_on: [ "tomcat-cont" ]
