@@ -1,0 +1,25 @@
+version: '2'
+services:
+ tomcatdata:
+    build:
+      context: .
+      dockerfile: application.Dockerfile
+ tomcatrunner:
+    build:
+      context: .
+      dockerfile: tomcat.Dockerfile
+    depends_on: [ "tomcatdata" ]
+    volumes_from: [ "tomcatdata" ]
+    expose: [ "8080" ]
+    ports: [ "8081:8080" ]
+ nginxrunner:
+    build:
+      context: .
+      dockerfile: web.Dockerfile
+    links:
+     - tomcatrunner
+    depends_on: 
+     - tomcatrunner
+     - tomcatdata
+    expose: [ "80" ]
+    ports: [ "0.0.0.0:8081:80" ]
