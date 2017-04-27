@@ -23,4 +23,4 @@ Using base docker image ***sbeliakou/centos:7.2***
 
 Task Report Notes
 ---
-*All stuff must be provided in this section
+###sudo docker-compose up -d
