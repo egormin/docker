@@ -10,12 +10,16 @@ Using base docker image ***sbeliakou/centos:7.2***
 
 1. Wiht ```Dockerfiles```:
     - Create Docker Image of ```nginx``` ([web.Dockerfile](/web.Dockerfile))
+
 `docker build -t web -f ./web.Dockerfile .`
     - Create Docker Image of ```Tomcat 7``` ([tomcat.Dockerfile](/tomcat.Dockerfile))
+
 `docker build -t tomcat -f ./tomcat.Dockerfile .`
     - Create Docker Image (Data Volume) with [```hello world```](https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war) application for Tomcat ([application.Dockerfile](application.Dockerfile))
+
 `docker build -t application -f ./application.Dockerfile .`
     - Run these Images so that [http://localhost/sample](http://localhost/sample) shows ```hello world``` page
+
 ```
 docker run -d --name app application
 docker run -d --volumes-from app tomcat
@@ -24,6 +28,7 @@ curl localhost:8080
 ```
 
     - ```Nginx``` container forwards http requests to ```Tomcat``` container; Only ```nginx``` container exposes port (80)
+
 2. With ```docker-compose```:
     - Create ```docker-compose.yml``` file to build containers from previos task
     - Run "environment" in daemon mode
