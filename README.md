@@ -8,22 +8,28 @@ Home Task
 
 Using base docker image ***sbeliakou/centos:7.2***
 
-1. Wiht ```Dockerfiles```:
+1. With ```Dockerfiles```:
+   
     - Create Docker Image of ```nginx``` ([web.Dockerfile](/web.Dockerfile))
+`
+docker build -t web -f web/web.Dockerfile .
+`
 
-`docker build -t web -f ./web.Dockerfile .`
     - Create Docker Image of ```Tomcat 7``` ([tomcat.Dockerfile](/tomcat.Dockerfile))
+`
+docker build -t tomcat -f tomcat/tomcat.Dockerfile .
+`
 
-`docker build -t tomcat -f ./tomcat.Dockerfile .`
     - Create Docker Image (Data Volume) with [```hello world```](https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war) application for Tomcat ([application.Dockerfile](application.Dockerfile))
+`
+docker build -t application -f application/application.Dockerfile .
+`
 
-`docker build -t application -f ./application.Dockerfile .`
     - Run these Images so that [http://localhost/sample](http://localhost/sample) shows ```hello world``` page
-
 ```
 docker run -d --name app application
-docker run -d --volumes-from app tomcat
-docker run -d -p 8080:80 web
+docker run -d --name tomcat --volumes-from app tomcat
+docker run -d --name proxy -p 8080:80  --link tomcat web
 curl localhost:8080
 ```
 
