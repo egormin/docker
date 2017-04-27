@@ -20,6 +20,7 @@ $ ansible-playbook playbook.yml
 ```
 
 ### Using Docker in Jenkinsfile
+[Jenkins Docker Pipeline plugin](https://go.cloudbees.com/docs/cloudbees-documentation/cje-user-guide/index.html#docker-workflow)
 
 ```
   stage('Run Tests') {
