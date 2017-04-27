@@ -8,10 +8,17 @@ docker build -t volume -f ./volume.Dockerfile .
 docker build -t tomcat -f ./tomcat.Dockerfile .
 
 #runnning containers
+
 docker run -d --name volume .
+
 docker run -d --name tomcat --volumes-from volume tomcat
+
 docker run -d --name nginx -p 8080:80 --link tomcat:tomcat nginx
 
+
+![alt text](https://github.com/MNTLab/docker/blob/docker-1/pavel_heraska/img/compose.png)
+![alt text](https://github.com/MNTLab/docker/blob/docker-1/pavel_heraska/img/docker_preview.png)
+![alt text](https://github.com/MNTLab/docker/blob/docker-1/pavel_heraska/img/simple.png)
 
 
 
