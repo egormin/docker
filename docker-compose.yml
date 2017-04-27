@@ -1,0 +1,28 @@
+version: '2'
+services:
+  application:
+    build:
+      context: .
+      dockerfile: application.Dockerfile
+    image: application
+    container_name: application
+
+  tomcat:
+    build:
+      context: .
+      dockerfile: tomcat.Dockerfile
+    volumes_from: [ "application" ]
+    depends_on: [ "application" ]
+    image: tomcat
+    container_name: tomcat
+
+  web:
+    build:
+      context: .
+      dockerfile: web.Dockerfile
+    expose: [ "80" ]
+    ports: [ "0.0.0.0:8080:80" ]
+    links: [ "tomcat:tomcat.host" ]
+    depends_on: [ "tomcat" ]
+    image: web
+    container_name: web
