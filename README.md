@@ -1,8 +1,10 @@
-Solution 
 
 #building images
+
 docker build -t nginx -f ./nginx.Dockerfile .
+
 docker build -t volume -f ./volume.Dockerfile .
+
 docker build -t tomcat -f ./tomcat.Dockerfile .
 
 #runnning containers
