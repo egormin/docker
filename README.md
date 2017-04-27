@@ -24,3 +24,5 @@ Using base docker image ***sbeliakou/centos:7.2***
 Task Report Notes
 ---
 *All stuff must be provided in this section
+# ilya_khamiakou
+http://epbyminw1969.minsk.epam.com:8080
