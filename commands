@@ -1,0 +1,46 @@
+docker images [OPTIONS] [REPOSITORY[:TAG]]
+  -a, --all             Show all images (default hides intermediate images)
+  -f, --filter filter   Filter output based on conditions provided
+  -q, --quiet           Only show numeric IDs
+
+
+docker build [OPTIONS] PATH | URL | -
+  -f, --file string                Name of the Dockerfile (Default is 'PATH/Dockerfile')
+  -t, --tag list                   Name and optionally a tag in the 'name:tag' format (default [])
+
+docker build -t web -f ./web.Dockerfile .
+docker build -t tomcat -f ./tomcat.Dockerfile .
+docker build -t application -f ./application.Dockerfile .
+
+
+docker run  [OPTIONS] IMAGE [COMMAND] [ARG...]
+  -t, --tty                                   Allocate a pseudo-TTY
+  -d, --detach                                Run container in background and print container ID
+  -p, --publish list                          Publish a container's port(s) to the host (default [])
+  -P, --publish-all                           Publish all exposed ports to random ports
+  -v, --volume list                           Bind mount a volume (default [])
+
+docker run -d -P $image
+docker run -p -P $image
+
+docker run -d -p 8080:80 web
+
+Build containers:
+$ docker build -t httpdrunner -f httpd.Dockerfile .
+...
+Successfully built 5a97406a8217
+
+$ docker build -t httpddata -f httpd-data.Dockerfile .
+...
+Successfully built 65536475a148
+
+
+Run containers:
+$ docker run -d --name datavolume httpddata
+920debf5ba7af2622b094273502b637b6941cb91be70c2f5d567630ac527d40
+
+$ docker run -d -P --volumes-from datavolume httpdrunner
+e1f230103900043922c887863047dc667acfe51326dda71dc7c3dc8426898e0f
+
+$ docker port e1f230103900043922c887863047dc667acfe51326dda71dc7c3dc8426898e0f
+80/tcp -> 0.0.0.0:32774
