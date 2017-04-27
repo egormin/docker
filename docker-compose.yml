@@ -1,0 +1,21 @@
+version: '2'
+services:
+  volume:
+    build:
+      context: .
+      dockerfile: volume.Dockerfile
+    command: sleep infinity
+  tomcat:
+    build:
+      context: .
+      dockerfile: tomcat.Dockerfile
+    depends_on: [ "volume" ]
+    volumes_from: [ "volume" ]
+  nginx:
+    build:
+      context: .
+      dockerfile: nginx.Dockerfile
+    depends_on: [ "tomcat" ]
+    expose: [ "80" ]
+    ports: [ "8080:80" ]
+    links: [ "tomcat" ]

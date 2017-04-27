@@ -1,3 +1,18 @@
+Solution 
+
+#building images
+docker build -t nginx -f ./nginx.Dockerfile .
+docker build -t volume -f ./volume.Dockerfile .
+docker build -t tomcat -f ./tomcat.Dockerfile .
+
+#runnning containers
+docker run -d --name volume .
+docker run -d --name tomcat --volumes-from volume tomcat
+docker run -d --name nginx -p 8080:80 --link tomcat:tomcat nginx
+
+
+
+
 MTN.*NIX.11 Automated Environment Configuration Management
 ---
 
