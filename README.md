@@ -1,12 +1,12 @@
 MTN.*NIX.11 Automated Environment Configuration Management
 ---
 
-***Student***: Put_Your_Name
+***Student***: Kuzniatsou Mikalai
 
 Home Task
 ---
 
-Using base docker image ***sbeliakou/centos:7.2***
+Using base docker image ***sbeliakou/centos:6.7***
 
 1. Wiht ```Dockerfiles```:
     - Create Docker Image of ```nginx``` ([web.Dockerfile](/web.Dockerfile))
@@ -23,4 +23,9 @@ Using base docker image ***sbeliakou/centos:7.2***
 
 Task Report Notes
 ---
-*All stuff must be provided in this section
+
+### Deployed application
+![alt text](resources/application.png "application")
+
+### The result of 'docker ps -a' command
+![alt text](resources/docker_containers.png "docker_containers")
