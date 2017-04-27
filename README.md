@@ -19,7 +19,6 @@ Using base docker image ***sbeliakou/centos:7.2***
     - Run "environment" in daemon mode
 3. Create own branch (epam login without @epam.com, in lowercase)
 4. Create PR with description of reported task
-5. All needed changes (additional configuration/installations) on "Host" must be added into [Vagrantfile](/Vagrantfile)
 6. All needed resources (if they are) must be placed into ```/resources``` folder
 
 Task Report Notes
