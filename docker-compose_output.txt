@@ -1,0 +1,84 @@
+[student@epbyminw2467 docker-1]$ sudo docker-compose up -d
+Creating network "docker1_default" with the default driver
+Building app
+Step 1/4 : FROM sbeliakou/centos:7.2
+ ---> 3adf11ba9dc7
+Step 2/4 : VOLUME /opt/apache-tomcat-8.5.14/webapps
+ ---> Using cache
+ ---> 4b56ed74709e
+Step 3/4 : ADD sample.war /opt/apache-tomcat-8.5.14/webapps/
+ ---> dc362432f555
+Removing intermediate container 41e25ef624cf
+Step 4/4 : CMD sleep infinity
+ ---> Running in 53834637b87c
+ ---> 5e080d89a051
+Removing intermediate container 53834637b87c
+Successfully built 5e080d89a051
+WARNING: Image for service app was built because it did not already exist. To rebuild this image you must use `docker-compose build` or `docker-compose up --build`.
+Building tomcat
+Step 1/8 : FROM sbeliakou/centos:7.2
+ ---> 3adf11ba9dc7
+Step 2/8 : RUN yum install -y yum-plugin-ovl
+ ---> Using cache
+ ---> e6414143ab95
+Step 3/8 : RUN yum install -y java-1.8.0-openjdk
+ ---> Using cache
+ ---> 46b001c90cf3
+Step 4/8 : ADD apache-tomcat-8.5.14.tar.gz /opt
+ ---> 73f650148dd5
+Removing intermediate container 8130167e2842
+Step 5/8 : WORKDIR /opt
+ ---> 7e4f21514f5f
+Removing intermediate container 1ee47439cf5a
+Step 6/8 : RUN groupadd tomcat
+ ---> Running in adf78893fc5d
+ ---> e4e7ed7040e2
+Removing intermediate container adf78893fc5d
+Step 7/8 : RUN useradd -s /bin/bash -g tomcat -d /opt/apache-tomcat-8.5.14 tomcat
+ ---> Running in 82551d681517
+useradd: warning: the home directory already exists.
+Not copying any file from skel directory into it.
+ ---> 2a35e128e1a3
+Removing intermediate container 82551d681517
+Step 8/8 : CMD /opt/apache-tomcat-8.5.14/bin/catalina.sh run
+ ---> Running in 4180d6290c8c
+ ---> c0aaed66cc3c
+Removing intermediate container 4180d6290c8c
+Successfully built c0aaed66cc3c
+WARNING: Image for service tomcat was built because it did not already exist. To rebuild this image you must use `docker-compose build` or `docker-compose up --build`.
+Building web
+Step 1/8 : FROM sbeliakou/centos:7.2
+ ---> 3adf11ba9dc7
+Step 2/8 : RUN yum install -y epel-release
+ ---> Using cache
+ ---> 83488ac4dc82
+Step 3/8 : RUN yum install -y yum-plugin-ovl
+ ---> Using cache
+ ---> 873e7e73c0dd
+Step 4/8 : RUN yum install -y nginx
+ ---> Using cache
+ ---> fd551f2a3076
+Step 5/8 : RUN rm /etc/nginx/nginx.conf
+ ---> Using cache
+ ---> 141d59d3ab16
+Step 6/8 : ADD nginx.conf /etc/nginx/
+ ---> 83d14e4975b1
+Removing intermediate container 42c64d8a12bd
+Step 7/8 : EXPOSE 80
+ ---> Running in 41d57799dbba
+ ---> 876c6593b83b
+Removing intermediate container 41d57799dbba
+Step 8/8 : CMD nginx -g 'daemon off;'
+ ---> Running in 6fecc00c6662
+ ---> 21b45e540a3f
+Removing intermediate container 6fecc00c6662
+Successfully built 21b45e540a3f
+WARNING: Image for service web was built because it did not already exist. To rebuild this image you must use `docker-compose build` or `docker-compose up --build`.
+Creating docker1_app_1
+Creating docker1_tomcat_1
+Creating docker1_web_1
+[student@epbyminw2467 docker-1]$ sudo docker ps
+CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS              PORTS                  NAMES
+3164039b7457        docker1_web         "/bin/sh -c 'nginx..."   10 seconds ago      Up 8 seconds        0.0.0.0:8080->80/tcp   docker1_web_1
+f731983c26fe        docker1_tomcat      "/bin/sh -c '/opt/..."   10 seconds ago      Up 9 seconds                               docker1_tomcat_1
+8a080f67e8a1        docker1_app         "sleep infinity"         11 seconds ago      Up 10 seconds                              docker1_app_1

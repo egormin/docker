@@ -1,0 +1,21 @@
+version: '2'
+services:
+  app:
+    build:
+      context: .
+      dockerfile: application.Dockerfile
+    command: sleep infinity
+  tomcat:
+    build:
+      context: .
+      dockerfile: tomcat.Dockerfile
+    depends_on: [ "app" ]
+    volumes_from: [ "app" ]
+  web:
+    build:
+      context: .
+      dockerfile: web.Dockerfile
+    depends_on: [ "tomcat" ]
+    expose: [ "80" ]
+    ports: [ "0.0.0.0:8080:80" ]
+    links: [ "tomcat:tomcat.docker.local" ]
