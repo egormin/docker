@@ -1,7 +1,7 @@
 MTN.*NIX.11 Automated Environment Configuration Management
 ---
 
-***Student***: Put_Your_Name
+***Student***: Ilya Khamiakou
 
 Home Task
 ---
