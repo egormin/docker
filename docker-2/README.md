@@ -15,8 +15,8 @@
 $ docker run --rm sbeliakou/ansible:2.2.1 ansible --version
 
 # run playbook from current dir
-$ alias a='docker run --rm -v $(pwd):$(pwd) -w $(pwd) sbeliakou/ansible:2.2.1 ansible-playbook -vv'
-$ aa playbook.yml
+$ alias ansible-playbook='docker run --rm -v $(pwd):$(pwd) -w $(pwd) sbeliakou/ansible:2.2.1 ansible-playbook -vv'
+$ ansible-playbook playbook.yml
 ```
 
 ### Using Docker in Jenkinsfile
