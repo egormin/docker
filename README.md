@@ -40,6 +40,6 @@ sudo docker-compose up -d
 
 ```
 
-[docker-compose_output.txt]() contains command output.
+[docker-compose_output.txt](https://github.com/MNTLab/docker/blob/docker-1/siarhei_hreben/docker-compose_output.txt) contains command output.
 
 
