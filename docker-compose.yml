@@ -4,14 +4,14 @@ services:
     build:
       context: .
       dockerfile: application.Dockerfile
+    container_name: application
  tomcatrunner:
     build:
       context: .
       dockerfile: tomcat.Dockerfile
     depends_on: [ "tomcatdata" ]
     volumes_from: [ "tomcatdata" ]
-    expose: [ "8080" ]
-    ports: [ "8081:8080" ]
+    container_name: tomcat
  nginxrunner:
     build:
       context: .
@@ -22,4 +22,5 @@ services:
      - tomcatrunner
      - tomcatdata
     expose: [ "80" ]
-    ports: [ "0.0.0.0:8081:80" ]
+    ports: [ "0.0.0.0:8080:80" ]
+    container_name: nginx
