@@ -26,7 +26,6 @@ docker run -d --name tomcat --volumes-from app tomcat
 docker run -d --name proxy -p 8080:80  --link tomcat web
 curl localhost:8080
 ```
-
     - ```Nginx``` container forwards http requests to ```Tomcat``` container; Only ```nginx``` container exposes port (80)
 
 2. With ```docker-compose```:
