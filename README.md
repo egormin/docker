@@ -23,4 +23,23 @@ Using base docker image ***sbeliakou/centos:7.2***
 
 Task Report Notes
 ---
-*All stuff must be provided in this section
+1. Commands used:
+
+```
+sudo docker build -t web -f web.Dockerfile .
+sudo docker build -t tomcat -f tomcat.Dockerfile .
+sudo docker build -t app -f application.Dockerfile .
+sudo docker network create --driver bridge docker-1-net
+sudo docker run -itd --rm --name appvolume app
+sudo docker run -itd --rm --network docker-1-net -h tomcat.docker.local --name tomcat --volumes-from appvolume tomcat
+sudo docker run -itd --rm --network docker-1-net -p 8080:80 -h nginx.docker.local --name nginx --link tomcat:tomcat.docker.local web
+```
+2. Commands used:
+```
+sudo docker-compose up -d
+
+```
+
+[docker-compose_output.txt]() contains command output.
+
+
