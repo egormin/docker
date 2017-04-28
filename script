@@ -1,0 +1,8 @@
+sudo docker build -t nginx -f web.Dockerfile .
+sudo docker build -t tomcat -f tomcat.Dockerfile .
+sudo docker build -t application -f application.Dockerfile .
+sudo docker run -d -P --name application application
+sudo docker run -d -P --volumes-from application --name tomcat tomcat
+sudo docker run -d -p 192.168.50.199:8080:80 --link tomcat:tomcat --name nginx nginx
+sudo docker run -d -p 192.168.50.199:8080:80 --name nginx nginx
+curl -ILvk 192.168.50.199/sample/
