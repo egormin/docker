@@ -19,9 +19,13 @@ To build:
 sudo docker build -t ansible -f ansible.Dockerfile .
 ```
 
-
-
-    #1. Create custom ansible (v2.2.1) image
+#### 2.  Launch Jenkins from official image
+Use command:
+```jenkins.command
+docker run --name myjenkins -d -p 8080:8080 -p 50000:50000 -v $(pwd)/jenkins_configs:/var/jenkins_home jenkins
+```
+Result:
+<img>pic/jenkins_result.png</img>
     
     
     
