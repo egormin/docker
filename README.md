@@ -25,14 +25,16 @@ Use command:
 docker run --name myjenkins -d -p 8080:8080 -p 50000:50000 -v $(pwd)/jenkins_configs:/var/jenkins_home jenkins
 ```
 Result:
-<img src=https://github.com/MNTLab/docker/blob/docker-2/yahor_skrabkou/pic/jenkins_result.png />
+<img src=pic/jenkins_result.png />
+
+#### 2.  Link Docker Host as Jenknis slave (ssh)
     
     
     
     
     
-    Launch Jenkins from official image
-    Link Docker Host as Jenknis slave (ssh)
+    
+
     Create custom gradle image
     Configure a job to build spring-boot application using gradle image buit in 3
     Configure a job to run just built Spring Boot app with docker-compose
