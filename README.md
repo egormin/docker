@@ -50,7 +50,6 @@ Using base docker image ***sbeliakou/centos:7.2***
 
 Task Report Notes
 ---
-
-    <img src="report/2.1.png">
-    <img src="report/2.2.png">
-    <img src="report/2.3.png">
+<img src="report/2.1.png">
+<img src="report/2.2.png">
+<img src="report/2.3.png">
