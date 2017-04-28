@@ -28,6 +28,8 @@ Result:
 <img src=pic/jenkins_result.png />
 
 #### 2.  Link Docker Host as Jenknis slave (ssh)
+<img src=pic/3.png />
+<img src=pic/4.png />
     
     
     
