@@ -1,0 +1,24 @@
+version: '2'
+services:
+
+ ansible-service:
+  container_name: ansible-cont
+  build:
+   context: .
+   dockerfile: ansible.Dockerfile
+
+ jenkins-service:
+  container_name: jenkins-cont
+  image: jenkins
+  restart: always
+  ports:
+   - 8080:8080
+   - 50000:50000
+  volumes:
+   - ./Jenkins:/var/jenkins_home
+
+ gradle-service:
+  container_name: gradle-cont
+  build:
+   context: .
+dockerfile: gradle.Dockerfile
