@@ -1,0 +1,50 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<flow-build plugin="workflow-job@2.10">
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause>
+            <userId>admin</userId>
+          </hudson.model.Cause_-UserIdCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <org.jenkinsci.plugins.workflow.libs.LibrariesAction plugin="workflow-cps-global-lib@2.8">
+      <libraries/>
+    </org.jenkinsci.plugins.workflow.libs.LibrariesAction>
+    <jenkins.model.InterruptedBuildAction>
+      <causes class="com.google.common.collect.ImmutableList">
+        <jenkins.model.CauseOfInterruption_-UserInterruption>
+          <user>admin</user>
+        </jenkins.model.CauseOfInterruption_-UserInterruption>
+      </causes>
+    </jenkins.model.InterruptedBuildAction>
+  </actions>
+  <queueId>1</queueId>
+  <timestamp>1493408100521</timestamp>
+  <startTime>1493408100524</startTime>
+  <result>ABORTED</result>
+  <duration>54206</duration>
+  <keepLog>false</keepLog>
+  <execution class="org.jenkinsci.plugins.workflow.cps.CpsFlowExecution">
+    <result>ABORTED</result>
+    <script>node(&quot;name1&quot;) {
+  stage (&apos;Check out&apos;)
+    {
+  git &apos;https://github.com/spring-guides/gs-spring-boot.git&apos;
+    }
+  stage (&apos;build&apos;)
+    {
+  docker.build(&apos;gradle&apos;)
+    }
+ 
+}</script>
+    <loadedScripts class="map"/>
+    <sandbox>true</sandbox>
+    <iota>5</iota>
+    <head>1:5</head>
+  </execution>
+  <checkouts class="hudson.util.PersistedList"/>
+</flow-build>

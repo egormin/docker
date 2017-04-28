@@ -1,0 +1,48 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<org.jenkinsci.plugins.workflow.support.storage.SimpleXStreamFlowNodeStorage_-Tag plugin="workflow-support@2.14">
+  <node class="org.jenkinsci.plugins.workflow.cps.nodes.StepEndNode" plugin="workflow-cps@2.30">
+    <parentIds>
+      <string>3</string>
+    </parentIds>
+    <id>4</id>
+    <startId>3</startId>
+  </node>
+  <actions>
+    <org.jenkinsci.plugins.workflow.actions.ErrorAction plugin="workflow-api@2.13">
+      <error class="hudson.AbortException">
+        <detailMessage>Queue task was cancelled</detailMessage>
+        <stackTrace>
+          <trace>org.jenkinsci.plugins.workflow.support.steps.ExecutorStepExecution$CancelledItemListener.onLeft(ExecutorStepExecution.java:200)</trace>
+          <trace>hudson.model.Queue$LeftItem.enter(Queue.java:2650)</trace>
+          <trace>hudson.model.Queue$Item.cancel(Queue.java:2246)</trace>
+          <trace>hudson.model.Queue.cancel(Queue.java:738)</trace>
+          <trace>org.jenkinsci.plugins.workflow.support.steps.ExecutorStepExecution.stop(ExecutorStepExecution.java:119)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.CpsThread.stop(CpsThread.java:287)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.CpsFlowExecution$6.onSuccess(CpsFlowExecution.java:872)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.CpsFlowExecution$6.onSuccess(CpsFlowExecution.java:861)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.CpsFlowExecution$4$1.run(CpsFlowExecution.java:658)</trace>
+          <trace>org.jenkinsci.plugins.workflow.cps.CpsVmExecutorService$1.run(CpsVmExecutorService.java:35)</trace>
+          <trace>java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)</trace>
+          <trace>java.util.concurrent.FutureTask.run(FutureTask.java:266)</trace>
+          <trace>hudson.remoting.SingleLaneExecutorService$1.run(SingleLaneExecutorService.java:112)</trace>
+          <trace>jenkins.util.ContextResettingExecutorService$1.run(ContextResettingExecutorService.java:28)</trace>
+          <trace>java.util.concurrent.Executors$RunnableAdapter.call(Executors.java:511)</trace>
+          <trace>java.util.concurrent.FutureTask.run(FutureTask.java:266)</trace>
+          <trace>java.util.concurrent.ThreadPoolExecutor.runWorker(ThreadPoolExecutor.java:1142)</trace>
+          <trace>java.util.concurrent.ThreadPoolExecutor$Worker.run(ThreadPoolExecutor.java:617)</trace>
+          <trace>java.lang.Thread.run(Thread.java:745)</trace>
+        </stackTrace>
+        <suppressedExceptions class="java.util.Collections$UnmodifiableRandomAccessList" resolves-to="java.util.Collections$UnmodifiableList">
+          <c class="list"/>
+          <list reference="../c"/>
+        </suppressedExceptions>
+      </error>
+    </org.jenkinsci.plugins.workflow.actions.ErrorAction>
+    <org.jenkinsci.plugins.workflow.actions.TimingAction plugin="workflow-api@2.13">
+      <startTime>1493408154644</startTime>
+    </org.jenkinsci.plugins.workflow.actions.TimingAction>
+    <org.jenkinsci.plugins.workflow.actions.ErrorAction plugin="workflow-api@2.13">
+      <error class="hudson.AbortException" reference="../../org.jenkinsci.plugins.workflow.actions.ErrorAction/error"/>
+    </org.jenkinsci.plugins.workflow.actions.ErrorAction>
+  </actions>
+</org.jenkinsci.plugins.workflow.support.storage.SimpleXStreamFlowNodeStorage_-Tag>

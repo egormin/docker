@@ -1,0 +1,2 @@
+[spring-boot] Running shell script
++ alias 'gradle=sudo docker run --rm -v $(pwd):$(pwd) -w $(pwd) docker2_gradle gradle'

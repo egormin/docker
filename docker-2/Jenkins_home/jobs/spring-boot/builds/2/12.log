@@ -1,0 +1,3 @@
+[spring-boot] Running shell script
++ docker build -t gradle .
+unable to prepare context: unable to evaluate symlinks in Dockerfile path: lstat /home/student/slave/workspace/spring-boot/Dockerfile: no such file or directory

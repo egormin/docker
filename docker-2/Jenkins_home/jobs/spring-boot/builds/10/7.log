@@ -1,0 +1,15 @@
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/spring-guides/gs-spring-boot.git # timeout=10
+Fetching upstream changes from https://github.com/spring-guides/gs-spring-boot.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/spring-guides/gs-spring-boot.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision b2add941bd3bddcffcf725eedb678486a9bf6bd7 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f b2add941bd3bddcffcf725eedb678486a9bf6bd7
+ > git branch -a -v --no-abbrev # timeout=10
+ > git branch -D master # timeout=10
+ > git checkout -b master b2add941bd3bddcffcf725eedb678486a9bf6bd7
+ > git rev-list b2add941bd3bddcffcf725eedb678486a9bf6bd7 # timeout=10

@@ -1,0 +1,29 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@2.10">
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+      <triggers/>
+    </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+  </properties>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.30">
+    <script>node(&quot;node1&quot;) {
+  stage (&apos;Check out&apos;)
+    {
+  git branch: &apos;docker-2/andrei_kutsko&apos;, url: &apos;https://github.com/MNTLab/docker.git&apos;
+    }
+  stage (&apos;build&apos;)
+    {
+  dir(&apos;docker-2/&apos;) 
+    {
+        sh &apos;&apos;&apos;
+       sudo docker-compose -f deploy-compose.yml up -d
+        &apos;&apos;&apos;
+    }   
+    }    
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+</flow-definition>

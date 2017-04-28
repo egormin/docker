@@ -1,0 +1,19 @@
+[initial] Running shell script
++ alias 'gradle=sudo docker run --rm -v $(pwd):$(pwd) -w $(pwd) docker2_gradle gradle'
+++ pwd
+++ pwd
+++ pwd
++ sudo docker run --rm -v /home/student/slave/workspace/spring-boot/spring-boot/initial:/home/student/slave/workspace/spring-boot/spring-boot/initial -w /home/student/slave/workspace/spring-boot/spring-boot/initial docker2_gradle gradle build
+Starting a Gradle Daemon (subsequent builds will be faster)
+:buildEnvironment
+
+------------------------------------------------------------
+Root project
+------------------------------------------------------------
+
+classpath
+No dependencies
+
+BUILD SUCCESSFUL
+
+Total time: 2.869 secs

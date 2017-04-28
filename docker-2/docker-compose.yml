@@ -1,0 +1,17 @@
+version: '2'
+services:
+  gradle:
+    build:
+      context: .
+      dockerfile: gradle.Dockerfile
+  jenkins:
+    image: jenkins
+    container_name: jenkins
+    restart: always
+    ports:
+      - 8080:8080
+      - 50000:50000
+    volumes:
+      - ./Jenkins_home:/var/jenkins_home
+    depends_on: [ "gradle" ]
+  

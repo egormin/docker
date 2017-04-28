@@ -1,0 +1,3 @@
+[initial] Running shell script
++ gradle build
+/home/student/slave/workspace/spring-boot/spring-boot/initial@tmp/durable-c7704b48/script.sh: line 2: gradle: command not found
