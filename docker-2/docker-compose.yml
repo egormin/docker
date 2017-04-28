@@ -1,0 +1,11 @@
+version: '3'
+services:
+ python:
+  build:
+   context: .
+   dockerfile: python.Dockerfile
+ ansible:
+  build:
+   context: .
+   dockerfile: ansible.Dockerfile
+  depends_on: [ "python" ]
