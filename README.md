@@ -2,7 +2,7 @@ MTN.*NIX.11 Automated Environment Configuration Management
 ---
 
 ***Student***: Ivan_Manzhulin
-host: epbyminw6406.minsk.epam.com
+***Host***: epbyminw6406.minsk.epam.com
 
 Home Task
 ---
