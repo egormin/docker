@@ -1,0 +1,9 @@
+- name: docker ansible test
+  hosts: localhost
+  tasks:
+  - name: Hello
+    shell: touch test.txt
+    register: file_created
+  - name: debug
+    debug:
+     msg: "File creation date: {{file_created.end}}"

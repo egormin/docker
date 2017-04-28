@@ -1,3 +1,14 @@
+####Ansible
+
 docker-compose up -d
 docker ps -a
 docker run --rm docker2_ansible ansible --version
+alias ansible-playbook='docker run --rm -v $(pwd):$(pwd) -w $(pwd) ansible ansible-playbook -vv'
+ansible-playbook playbook.yml
+
+####Inspecting jenkins
+
+docker pull jenkins
+docker run -p 8080:8080 -p 50000:50000 -v /home/student/cm/docker/docker-2/jenkins_home jenkins
+sudo docker exec inspiring_mirzakhani cat /var/jenkins_home/secrets/initialAdminPassword
+#copy and paste admin password and continue jenkins configuration
