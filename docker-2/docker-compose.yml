@@ -21,4 +21,4 @@ services:
   container_name: gradle-cont
   build:
    context: .
-   dockerfile: gradle<.Dockerfile
+   dockerfile: gradle.Dockerfile
