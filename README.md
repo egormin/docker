@@ -1,12 +1,13 @@
 MTN.*NIX.11 Automated Environment Configuration Management
 ---
 
-***Student***: Put_Your_Name
+***Student***: Ivan_Manzhulin
+host: epbyminw6406.minsk.epam.com
 
 Home Task
 ---
 
-Using base docker image ***sbeliakou/centos:7.2***
+Using base docker image ***sbeliakou/centos:7.2(6.7)***
 
 1. Wiht ```Dockerfiles```:
     - Create Docker Image of ```nginx``` ([web.Dockerfile](/web.Dockerfile))
