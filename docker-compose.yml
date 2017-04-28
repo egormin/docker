@@ -1,21 +1,16 @@
 version: '2'
 services:
-  app:
+  gradle:
     build:
       context: .
-      dockerfile: application.Dockerfile
-    command: sleep infinity
-  tomcat:
-    build:
-      context: .
-      dockerfile: tomcat.Dockerfile
-    depends_on: [ "app" ]
-    volumes_from: [ "app" ]
-  web:
-    build:
-      context: .
-      dockerfile: web.Dockerfile
-    depends_on: [ "tomcat" ]
-    expose: [ "80" ]
-    ports: [ "8080:80" ]
-    links: [ "tomcat" ]
+      dockerfile: gradle.Dockerfile
+  jenkins:
+    image: jenkins
+    container_name: jenkins
+    restart: always
+    ports:
+      - 8085:8080
+      - 50000:50000
+    volumes:
+      - ./jenkinsfiles:/var/jenkins_home
+    depends_on: [ "gradle" ]

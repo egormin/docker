@@ -1,0 +1,16 @@
+version: '2'
+services:
+  volume:
+    build:
+      context: .
+      dockerfile: volume.Dockerfile
+  env:
+    build:
+      context: .
+      dockerfile: app.Dockerfile
+    container_name: app
+    ports:
+      - 8086:8080
+    depends_on: [ "volume" ]
+    volumes_from: [ "volume" ]
+
