@@ -36,3 +36,59 @@ $ ansible-playbook playbook.yml
     }
   }
 ```
+---
+Task2.
+# Ilya khamiakou
+---
+# 1.ANSIBLE
+## Files:
+[ansible.Dockerfile]( https://github.com/MNTLab/docker/blob/docker-2/ilya_khamiakou/docker-2/ansible.Dockerfile):
+```docker
+#connecting previously created python
+FROM python
+MAINTAINER ilya_khamiakou
+RUN pip install ansible==2.2.1
+WORKDIR /data
+CMD ["bash"]
+```
+[python.Dockerfile]( https://github.com/MNTLab/docker/blob/docker-2/ilya_khamiakou/docker-2/python.Dockerfile):
+```docker
+FROM sbeliakou/centos:7.2
+MAINTAINER ilya_khamiakou
+RUN \
+  yum update -y && \
+  yum install -y python python-dev python-pip python-virtualenv && \
+
+#work dir
+WORKDIR /data
+CMD ["bash"]
+```
+[docker-compose]( https://github.com/MNTLab/docker/blob/docker-2/ilya_khamiakou/docker-2/docker-compose.yml):
+```yml
+version: '3'
+services:
+ python:
+  build:
+   context: .
+   dockerfile: python.Dockerfile
+ ansible:
+  build:
+   context: .
+   dockerfile: ansible.Dockerfile
+depends_on: [ "python" ]
+```
+### List of commands used:
+```docker
+docker-compose up -d
+docker ps -a
+docker run --rm docker2_ansible ansible --version
+```
+## Output:
+![alt tag](https://raw.githubusercontent.com/MNTLab/docker/docker-2/ilya_khamiakou/docker-2/pics/1.ansible.png)
+## Ansible container usage:
+```
+alias ansible-playbook='docker run --rm -v $(pwd):$(pwd) -w $(pwd) ansible ansible-playbook -vv'
+ansible-playbook playbook.yml
+```
+
+![alt tag](https://raw.githubusercontent.com/MNTLab/docker/docker-2/ilya_khamiakou/docker-2/pics/ansibleplaybookrun.png)
