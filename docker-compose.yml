@@ -1,0 +1,26 @@
+version: '2'
+services:
+   appdata:
+      build:
+          context: .
+          dockerfile: application.Dockerfile
+      container_name: appdata
+      restart: always
+   tomcat:
+      build:
+          context: .
+          dockerfile: tomcat.Dockerfile
+      container_name: tomcat
+      depends_on: [ "appdata" ]
+      volumes_from: [ "appdata" ]
+      ports: [ "8080:8080" ]
+      restart: always
+   nginx:
+      build:
+          context: .
+          dockerfile: web.Dockerfile
+      container_name: nginx
+      depends_on: [ "tomcat" ]
+      ports: [ "80:80" ]
+      links: [ "tomcat:tomcat" ]
+      restart: always
