@@ -1,7 +1,7 @@
 MTN.*NIX.11 Automated Environment Configuration Management
 ---
 
-***Student***: Put_Your_Name
+***Student***: Artyom Bilun
 
 Home Task
 ---
@@ -23,4 +23,8 @@ Using base docker image ***sbeliakou/centos:7.2***
 
 Task Report Notes
 ---
-*All stuff must be provided in this section
+### Sample application
+![screenshot](screenshots/docker_sample.png "Application")
+
+### Docker stats
+![screenshot](screenshots/docker_stats.png "Stats")
