@@ -7,7 +7,7 @@ MTN.*NIX.11 Automated Environment Configuration Management
 #### 1. Create custom ansible (v2.2.1) image
 
 <i><b>ansible.Dockerfile:</b></i>
-```docker
+```ansible.Dockerfile
 FROM sbeliakou/centos:7.2
 MAINTAINER Yahor Skrabkou (yahor_skrabkou@epam.com)
 RUN yum install -y python-pip python-devel gcc epel-release yum-plugin-ovl openssl-devel && \
@@ -15,7 +15,9 @@ RUN yum install -y python-pip python-devel gcc epel-release yum-plugin-ovl opens
 ```
 
 To build:
+```build
 sudo docker build -t ansible -f ansible.Dockerfile .
+```
 
 
 
