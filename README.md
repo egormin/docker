@@ -1,7 +1,7 @@
 MTN.*NIX.11 Automated Environment Configuration Management
 ---
 
-***Student***: Mikhail Nkolayev
+***Student***: Mikhail Nikolayev
 
 Home Task
 ---
