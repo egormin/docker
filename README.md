@@ -3,24 +3,39 @@ MTN.*NIX.11 Automated Environment Configuration Management
 
 ***Student***: Maksim Burakouski
 
-Home Task
+Home Task 2
 ---
 
-Using base docker image ***sbeliakou/centos:7.2***
+# 1. Create custom ansible (v2.2.1) image
+Dockerfile for ansible - ansible.Dockerfile
 
-1. Wiht ```Dockerfiles```:
-    - Create Docker Image of ```nginx``` ([web.Dockerfile](/web.Dockerfile))
-    - Create Docker Image of ```Tomcat 7``` ([tomcat.Dockerfile](/tomcat.Dockerfile))
-    - Create Docker Image (Data Volume) with [```hello world```](https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war) application for Tomcat ([application.Dockerfile](application.Dockerfile))
-    - Run these Images so that [http://localhost/sample](http://localhost/sample) shows ```hello world``` page
-    - ```Nginx``` container forwards http requests to ```Tomcat``` container; Only ```nginx``` container exposes port (80)
-2. With ```docker-compose```:
-    - Create ```docker-compose.yml``` file to build containers from previos task
-    - Run "environment" in daemon mode
-3. Create own branch (epam login without @epam.com, in lowercase)
-4. Create PR with description of reported task
-6. All needed resources (if they are) must be placed into ```/resources``` folder
+Run:
+  ***alias ansible-playbook='docker run --rm -v $(pwd):$(pwd) -w $(pwd) ansible ansible-playbook -vv'***
+  ***ansible-playbook hello.yum***
+Output:
+![alt text](https://github.com/MNTLab/docker/blob/docker-2/maksim_burakouski/docker-2/pictures/ansible_run.png)
 
-Task Report Notes
----
-*All stuff must be provided in this section
+# 2. Launch Jenkins from official image
+# 3. Link Docker Host as Jenknis slave (ssh)
+Create user jenkins on host mashine, add public key of jenkins-master to authorized_keys jenkins-slave.
+Configure jenkins node:
+![alt text](https://github.com/MNTLab/docker/blob/docker-2/maksim_burakouski/docker-2/pictures/node_config.png)
+
+# 4. Create custom gradle image
+Dockerfile for gradle - gradle.Dockerfile
+
+# 5. Configure a job to build spring-boot application using gradle image buit in 3
+Pipeline script for this job - Jenkinsfile_1
+Job output:
+![alt text](https://github.com/MNTLab/docker/blob/docker-2/maksim_burakouski/docker-2/pictures/build_job.png)
+
+# 6. Configure a job to run just built Spring Boot app with docker-compose
+Dockerfile for deploy application - deploy.Dockerfile
+Docker compose file - docker-compose.yml
+Pipeline script for this job - Jenkinsfile_2
+Job output:
+![alt text](https://github.com/MNTLab/docker/blob/docker-2/maksim_burakouski/docker-2/pictures/deploy_job.png)
+
+# Checking:
+![alt text](https://github.com/MNTLab/docker/blob/docker-2/maksim_burakouski/docker-2/pictures/check_app.png)
+
