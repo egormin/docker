@@ -25,7 +25,7 @@ Use command:
 docker run --name myjenkins -d -p 8080:8080 -p 50000:50000 -v $(pwd)/jenkins_configs:/var/jenkins_home jenkins
 ```
 Result:
-<img>/pic/jenkins_result.png</img>
+<img>https://github.com/MNTLab/docker/blob/docker-2/yahor_skrabkou/pic/jenkins_result.png</img>
     
     
     
