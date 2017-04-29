@@ -1,5 +1,4 @@
 FROM sbeliakou/centos:7.2
-FROM sbeliakou/centos:7.2
 RUN yum install -y yum-plugin-ovl && \
     yum install -y which zip unzip java-1.8.0-openjdk java-1.8.0-openjdk-devel && \
     curl -s "https://get.sdkman.io" | bash && \ 
