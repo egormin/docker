@@ -1,0 +1,5 @@
+- hosts: localhost
+  tasks:
+    - name: test connection
+      debug:
+        msg: "Hello from debug module"
