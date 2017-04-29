@@ -1,0 +1,15 @@
+node('Docker Host') {
+  stage ('Building Docker image'){
+       git 'https://github.com/mnikolayev/gradle.git'
+       sh 'docker build -t gradle -f ./gradle.Dockerfile '
+  }
+  stage('Preparation (Checking out)') {
+  git ' https://github.com/spring-guides/gs-spring-boot.git'
+  }
+  stage('Build application'){
+        sh '''cd initial
+        docker run --rm -v $(pwd):$(pwd) -w $(pwd) gradle gradle build
+        cp build/libs/gs-spring-boot-0.1.0.jar /home/student/docker/docker/gradle/
+        chmod +x /home/student/docker/docker/gradle/gs-spring-boot-0.1.0.jar'''
+  }
+}

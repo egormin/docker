@@ -1,0 +1,5 @@
+- name: This is a hello-world example
+  hosts: localhost
+  tasks:
+  - name: Hello world
+    shell: echo "Hello world !"
