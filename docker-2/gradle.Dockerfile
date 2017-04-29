@@ -1,8 +1,9 @@
 FROM sbeliakou/centos:7.2
-RUN gradle_version=2.9 && \
-    wget -N https://services.gradle.org/distributions/gradle-${gradle_version}-all.zip && \
-    sudo unzip -foq gradle-${gradle_version}-all.zip -d /opt/gradle && \
-    sudo ln -sfn gradle-${gradle_version} /opt/gradle/latest && \
-    sudo printf "export GRADLE_HOME=/opt/gradle/latest\nexport PATH=\$PATH:\$GRADLE_HOME/bin" > /etc/profile.d/gradle.sh && \
-    . /etc/profile.d/gradle.sh && \
-    gradle -v
+FROM sbeliakou/centos:7.2
+RUN yum install -y yum-plugin-ovl && \
+    yum install -y which zip unzip java-1.8.0-openjdk java-1.8.0-openjdk-devel && \
+    curl -s "https://get.sdkman.io" | bash && \ 
+    source "/root/.sdkman/bin/sdkman-init.sh" && \
+    sdk install gradle 3.5
+ENV JAVA_HOME /usr/lib/jvm/java-1.8.0-openjdk-1.8.0.131-2.b11.el7_3.x86_64/
+ENV PATH /root/.sdkman/candidates/gradle/3.5/bin/:$PATH
