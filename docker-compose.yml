@@ -15,7 +15,4 @@ services:
     build:
       context: .
       dockerfile: web/web.Dockerfile
-    depends_on: [ "tomcat" ]
-    expose: [ "80" ]
     ports: [ "8080:80" ]
-    links: [ "tomcat" ]
