@@ -19,7 +19,7 @@ COPY configs/nginx.conf /etc/nginx/nginx.conf
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
-- Create Docker Image of ```Tomcat 7``` ([tomcat.Dockerfile](/tomcat.Dockerfile))<br><br>
+- Create Docker Image of ```Tomcat 7``` ([tomcat.Dockerfile](/tomcat.Dockerfile))<br>
     
 <i><b>tomcat.Dockerfile:</b></i>
 ```tomcat.Dockerfile
@@ -29,9 +29,21 @@ RUN yum install -y tomcat; yum clean all
 EXPOSE 8080
 CMD /usr/libexec/tomcat/server start 
 ```
-    - Create Docker Image (Data Volume) with [```hello world```](https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war) application for Tomcat ([application.Dockerfile](application.Dockerfile))
+- Create Docker Image (Data Volume) with [```hello world```](https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war) application for Tomcat ([application.Dockerfile](application.Dockerfile))
+
+<i><b>application.Dockerfile:</b></i>
+```application.Dockerfile
+FROM sbeliakou/centos:7.2
+MAINTAINER Yahor Skrabkou (yahor_skrabkou@epam.com)
+RUN yum install -y wget 
+RUN wget https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war -P /usr/share/tomcat/webapps/
+VOLUME /usr/share/tomcat/webapps/
+CMD sleep infinity
+```
+    
     - Run these Images so that [http://localhost/sample](http://localhost/sample) shows ```hello world``` page
     - ```Nginx``` container forwards http requests to ```Tomcat``` container; Only ```nginx``` container exposes port (80)
+    
 2. With ```docker-compose```:
     - Create ```docker-compose.yml``` file to build containers from previos task
     - Run "environment" in daemon mode
