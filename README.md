@@ -141,7 +141,8 @@ http {
 
 }
 ```
-    
+  
+  
 2. With ```docker-compose```:
     - Create ```docker-compose.yml``` file to build containers from previos task
     - Run "environment" in daemon mode
