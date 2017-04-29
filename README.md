@@ -54,7 +54,7 @@ ENV PATH /root/.sdkman/candidates/gradle/3.5/bin/:$PATH
 <i><b>Jenkins job log:</b></i>
 <img src=pic/7.png />
 
-<i><b>Built successfully:</b></i>
+<i><b>Built successfully:</b></i><br>
 <img src=pic/8.png />
 
 
