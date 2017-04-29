@@ -25,3 +25,7 @@ Task Report Notes
 ---
 *All stuff must be provided in this section
 _
+
+<img src=pic/docker ps.png.png />
+<img src=pic/docker-compose_result.png />
+<img src=pic/result.png />
