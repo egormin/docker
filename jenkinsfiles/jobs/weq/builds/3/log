@@ -1,0 +1,43 @@
+Started by user [8mha:////4KhiwaoD5r7rpY76WEIv83R/eztxggH2sFGkzy5Jnt1gAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgZu/dLi1CL9xJTczDwAEmIUecAAAAA=[0masdasd asd
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] node
+Running on slave in /home/student/slave/workspace/weq
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] {
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] stage
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] { (Check)
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] git
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/spring-guides/gs-spring-boot.git # timeout=10
+Fetching upstream changes from https://github.com/spring-guides/gs-spring-boot.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/spring-guides/gs-spring-boot.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/master^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/master^{commit} # timeout=10
+Checking out Revision b2add941bd3bddcffcf725eedb678486a9bf6bd7 (refs/remotes/origin/master)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f b2add941bd3bddcffcf725eedb678486a9bf6bd7
+ > git branch -a -v --no-abbrev # timeout=10
+ > git branch -D master # timeout=10
+ > git checkout -b master b2add941bd3bddcffcf725eedb678486a9bf6bd7
+ > git rev-list b2add941bd3bddcffcf725eedb678486a9bf6bd7 # timeout=10
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // stage
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] stage
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] { (build)
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] dir
+Running in /home/student/slave/workspace/weq/initial
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] {
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] sh
+[initial] Running shell script
++ alias 'gradle=sudo docker run --rm -v $(pwd):$(pwd) -w $(pwd)' docker_gradle gradle
+/home/student/slave/workspace/weq/initial@tmp/durable-a453c2a0/script.sh: line 3: alias: docker_gradle: not found
+gradle='sudo docker run --rm -v $(pwd):$(pwd) -w $(pwd)'
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // dir
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // stage
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // node
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] End of Pipeline
+ERROR: script returned exit code 1
+[8mha:////4LKs5VwdamEasmX0xOW7q9sggjzinz61xYUF0lFROD/bAAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mFinished: FAILURE

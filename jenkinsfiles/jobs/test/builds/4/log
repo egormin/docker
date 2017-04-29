@@ -1,0 +1,23 @@
+Started by user [8mha:////4KhiwaoD5r7rpY76WEIv83R/eztxggH2sFGkzy5Jnt1gAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgZu/dLi1CL9xJTczDwAEmIUecAAAAA=[0masdasd asd
+Building in workspace /var/jenkins_home/workspace/test
+[test] $ /bin/sh -xe /tmp/hudson5478172726247900628.sh
++ ssh-keygen -t rsa -f /var/jenkins_home/.ssh/id_rsa -N 
+Generating public/private rsa key pair.
+Created directory '/var/jenkins_home/.ssh'.
+Your identification has been saved in /var/jenkins_home/.ssh/id_rsa.
+Your public key has been saved in /var/jenkins_home/.ssh/id_rsa.pub.
+The key fingerprint is:
+c4:db:68:aa:ba:24:be:4c:63:f9:52:a2:2c:4a:a8:38 jenkins@aaa4ffdcadef
+The key's randomart image is:
++---[RSA 2048]----+
+|                 |
+|       .         |
+|        o        |
+|       . +       |
+|        S .      |
+|....   o         |
+|=*+   .          |
+|E=o  .           |
+|*==+.            |
++-----------------+
+Finished: SUCCESS

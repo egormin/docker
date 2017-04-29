@@ -1,0 +1,7 @@
+Started by user [8mha:////4KhiwaoD5r7rpY76WEIv83R/eztxggH2sFGkzy5Jnt1gAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgZu/dLi1CL9xJTczDwAEmIUecAAAAA=[0masdasd asd
+Building in workspace /var/jenkins_home/workspace/test
+[test] $ /bin/sh -xe /tmp/hudson510571661142488002.sh
++ ssh-keygen -N 
+Enter file in which to save the key (/var/jenkins_home/.ssh/id_rsa): Generating public/private rsa key pair.
+Build step 'Execute shell' marked build as failure
+Finished: FAILURE

@@ -1,0 +1,16 @@
+[fin] Running shell script
++ sudo docker-compose -f dep-compose.yml up -d
+Creating network "fin_default" with the default driver
+Building volume
+Step 1/5 : FROM sbeliakou/centos:7.2
+ ---> 3adf11ba9dc7
+Step 2/5 : MAINTAINER aslesarenka
+ ---> Running in 43db17d5c795
+ ---> 7edc0391687c
+Removing intermediate container 43db17d5c795
+Step 3/5 : VOLUME /var/custom
+ ---> Running in f2fcb5a47a36
+ ---> f47cb535b8ab
+Removing intermediate container f2fcb5a47a36
+Step 4/5 : ADD custom/spring-boot_application.jar /var/custom/
+Service 'volume' failed to build: lstat custom/spring-boot_application.jar: no such file or directory

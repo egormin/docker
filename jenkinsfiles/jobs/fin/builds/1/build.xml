@@ -1,0 +1,115 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<flow-build plugin="workflow-job@2.10">
+  <actions>
+    <hudson.model.CauseAction>
+      <causeBag class="linked-hash-map">
+        <entry>
+          <hudson.model.Cause_-UserIdCause>
+            <userId>admin</userId>
+          </hudson.model.Cause_-UserIdCause>
+          <int>1</int>
+        </entry>
+      </causeBag>
+    </hudson.model.CauseAction>
+    <org.jenkinsci.plugins.workflow.libs.LibrariesAction plugin="workflow-cps-global-lib@2.8">
+      <libraries/>
+    </org.jenkinsci.plugins.workflow.libs.LibrariesAction>
+    <hudson.plugins.git.util.BuildData plugin="git@3.3.0">
+      <buildsByBranchName>
+        <entry>
+          <string>refs/remotes/origin/docker-2/aleh_slesarenka</string>
+          <hudson.plugins.git.util.Build>
+            <marked plugin="git-client@2.4.4">
+              <sha1>c6cb15d7475be5bf611e4b597ebec905be32b670</sha1>
+              <branches class="list">
+                <hudson.plugins.git.Branch>
+                  <sha1 reference="../../../sha1"/>
+                  <name>refs/remotes/origin/docker-2/aleh_slesarenka</name>
+                </hudson.plugins.git.Branch>
+              </branches>
+            </marked>
+            <revision reference="../marked"/>
+            <hudsonBuildNumber>1</hudsonBuildNumber>
+          </hudson.plugins.git.util.Build>
+        </entry>
+      </buildsByBranchName>
+      <lastBuild reference="../buildsByBranchName/entry/hudson.plugins.git.util.Build"/>
+      <remoteUrls>
+        <string>https://github.com/MNTLab/docker.git</string>
+      </remoteUrls>
+    </hudson.plugins.git.util.BuildData>
+    <hudson.plugins.git.GitTagAction plugin="git@3.3.0">
+      <tags class="hudson.util.CopyOnWriteMap$Tree">
+        <entry>
+          <string>refs/remotes/origin/docker-2/aleh_slesarenka</string>
+          <list/>
+        </entry>
+      </tags>
+      <ws>/home/student/slave/workspace/fin</ws>
+    </hudson.plugins.git.GitTagAction>
+    <org.jenkinsci.plugins.workflow.steps.scm.MultiSCMRevisionState plugin="workflow-scm-step@2.4">
+      <revisionStates>
+        <entry>
+          <string>git https://github.com/MNTLab/docker.git</string>
+          <hudson.scm.SCMRevisionState_-None/>
+        </entry>
+      </revisionStates>
+    </org.jenkinsci.plugins.workflow.steps.scm.MultiSCMRevisionState>
+  </actions>
+  <queueId>17</queueId>
+  <timestamp>1493424072518</timestamp>
+  <startTime>1493424072519</startTime>
+  <result>FAILURE</result>
+  <duration>31543</duration>
+  <keepLog>false</keepLog>
+  <execution class="org.jenkinsci.plugins.workflow.cps.CpsFlowExecution">
+    <result>FAILURE</result>
+    <script>node(&quot;slave&quot;){
+    stage (&apos;Check&apos;)
+{
+git branch: &apos;docker-2/aleh_slesarenka&apos;, url: &apos;https://github.com/MNTLab/docker.git&apos;
+}
+stage (&apos;build&apos;)
+{
+    dir(&apos;docker-2/&apos;)
+{
+    sh &apos;&apos;&apos;
+    sudo docker-compose -f deploy-compose.yml up -d
+    &apos;&apos;&apos;
+}
+}
+}</script>
+    <loadedScripts class="map"/>
+    <sandbox>true</sandbox>
+    <iota>21</iota>
+    <head>1:21</head>
+  </execution>
+  <checkouts class="hudson.util.PersistedList">
+    <org.jenkinsci.plugins.workflow.job.WorkflowRun_-SCMCheckout>
+      <scm class="hudson.plugins.git.GitSCM" plugin="git@3.3.0">
+        <configVersion>2</configVersion>
+        <userRemoteConfigs>
+          <hudson.plugins.git.UserRemoteConfig>
+            <url>https://github.com/MNTLab/docker.git</url>
+          </hudson.plugins.git.UserRemoteConfig>
+        </userRemoteConfigs>
+        <branches class="singleton-list">
+          <hudson.plugins.git.BranchSpec>
+            <name>*/docker-2/aleh_slesarenka</name>
+          </hudson.plugins.git.BranchSpec>
+        </branches>
+        <doGenerateSubmoduleConfigurations>false</doGenerateSubmoduleConfigurations>
+        <submoduleCfg class="empty-list"/>
+        <extensions>
+          <hudson.plugins.git.extensions.impl.LocalBranch>
+            <localBranch>docker-2/aleh_slesarenka</localBranch>
+          </hudson.plugins.git.extensions.impl.LocalBranch>
+        </extensions>
+      </scm>
+      <node>slave</node>
+      <workspace>/home/student/slave/workspace/fin</workspace>
+      <changelogFile>/var/jenkins_home/jobs/fin/builds/1/changelog0.xml</changelogFile>
+      <pollingBaseline class="hudson.scm.SCMRevisionState$None" reference="../../../actions/org.jenkinsci.plugins.workflow.steps.scm.MultiSCMRevisionState/revisionStates/entry/hudson.scm.SCMRevisionState_-None"/>
+    </org.jenkinsci.plugins.workflow.job.WorkflowRun_-SCMCheckout>
+  </checkouts>
+</flow-build>

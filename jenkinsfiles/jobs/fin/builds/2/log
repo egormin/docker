@@ -1,0 +1,42 @@
+Started by user [8mha:////4KhiwaoD5r7rpY76WEIv83R/eztxggH2sFGkzy5Jnt1gAAAAlx+LCAAAAAAAAP9b85aBtbiIQTGjNKU4P08vOT+vOD8nVc83PyU1x6OyILUoJzMv2y+/JJUBAhiZGBgqihhk0NSjKDWzXb3RdlLBUSYGJk8GtpzUvPSSDB8G5tKinBIGIZ+sxLJE/ZzEvHT94JKizLx0a6BxUmjGOUNodHsLgAyuEgZu/dLi1CL9xJTczDwAEmIUecAAAAA=[0masdasd asd
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] node
+Running on slave in /home/student/slave/workspace/fin
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] {
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] stage
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] { (Check)
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] git
+ > git rev-parse --is-inside-work-tree # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/MNTLab/docker.git # timeout=10
+Fetching upstream changes from https://github.com/MNTLab/docker.git
+ > git --version # timeout=10
+ > git fetch --tags --progress https://github.com/MNTLab/docker.git +refs/heads/*:refs/remotes/origin/*
+ > git rev-parse refs/remotes/origin/docker-2/aleh_slesarenka^{commit} # timeout=10
+ > git rev-parse refs/remotes/origin/origin/docker-2/aleh_slesarenka^{commit} # timeout=10
+Checking out Revision c6cb15d7475be5bf611e4b597ebec905be32b670 (refs/remotes/origin/docker-2/aleh_slesarenka)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f c6cb15d7475be5bf611e4b597ebec905be32b670
+ > git branch -a -v --no-abbrev # timeout=10
+ > git branch -D docker-2/aleh_slesarenka # timeout=10
+ > git checkout -b docker-2/aleh_slesarenka c6cb15d7475be5bf611e4b597ebec905be32b670
+ > git rev-list c6cb15d7475be5bf611e4b597ebec905be32b670 # timeout=10
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // stage
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] stage
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] { (build)
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] dir
+Running in /home/student/slave/workspace/fin/docker-2
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] {
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] sh
+[docker-2] Running shell script
++ sudo docker-compose -f dep-compose.yml up -d
+.IOError: [Errno 2] No such file or directory: u'./dep-compose.yml'
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // dir
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // stage
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] }
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] // node
+[8mha:////4Gs7OuMGIioJ9Fwk12fNngpU7qyqdflfxsd28loz2ro6AAAAaB+LCAAAAAAAAP9b85aBtbiIwTG/KF0vKzUvOzOvODlTryCnNB3I0ivPL8pOy8kv18vKT9JLzs8rzs9J1QuHCgaV5jlDhPzyS1IZIICRiYGhoohBKqM0pTg/D64Hh8ICAFt0h+h/AAAA[0m[Pipeline] End of Pipeline
+ERROR: script returned exit code 1
+[8mha:////4LKs5VwdamEasmX0xOW7q9sggjzinz61xYUF0lFROD/bAAAAWB+LCAAAAAAAAP9b85aBtbiIQSmjNKU4P08vOT+vOD8nVc8DzHWtSE4tKMnMz/PLL0ldFVf2c+b/lb5MDAwVRQxSaBqcITRIIQMEMIIUFgAAckCEiWAAAAA=[0mFinished: FAILURE

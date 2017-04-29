@@ -1,0 +1,11 @@
+[initial] Running shell script
++ alias 'gradle=sudo docker run --rm -v $(pwd):$(pwd) -w $(pwd)' gradle gradle
+gradle='sudo docker run --rm -v $(pwd):$(pwd) -w $(pwd)'
+gradle='sudo docker run --rm -v $(pwd):$(pwd) -w $(pwd)'
+++ pwd
+++ pwd
+++ pwd
++ sudo docker run --rm -v /home/student/slave/workspace/weq/initial:/home/student/slave/workspace/weq/initial -w /home/student/slave/workspace/weq/initial build
+Unable to find image 'build:latest' locally
+docker: Error response from daemon: repository build not found: does not exist or no pull access.
+See 'docker run --help'.

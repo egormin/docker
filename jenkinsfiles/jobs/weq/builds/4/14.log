@@ -1,0 +1,3 @@
+[initial] Running shell script
++ alias 'gradle=sudo docker run --rm -v $(pwd):$(pwd) -w $(pwd)' docker_gradle
+/home/student/slave/workspace/weq/initial@tmp/durable-60b32edb/script.sh: line 3: alias: docker_gradle: not found
