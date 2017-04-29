@@ -1,0 +1,6 @@
+node('host ilya_khamiakou') {
+  stage ('dockercompose spring'){
+     sh ''' cd /opt/test/
+            docker-compose up -d'''
+  }
+}
