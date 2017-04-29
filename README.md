@@ -58,6 +58,43 @@ ENV PATH /root/.sdkman/candidates/gradle/3.5/bin/:$PATH
 <img src=pic/8.png />
 
 
+#### 6.  Configure a job to run just built Spring Boot app with docker-compose
+<i><b>deploy.Dockerfile:</b></i>
+```deploy.Dockerfile
+FROM sbeliakou/centos:7.2
+MAINTAINER Yahor Skrabkou (yahor_skrabkou@epam.com)
+ENV APP_NAME gs-spring-boot-0.1.0.jar
+ENV PATH_TO_PATH jenkins_node1/workspace/build_app/initial/build/libs
+
+ADD $PATH_TO_PATH/$APP_NAME /tmp/
+
+RUN yum install -y yum-plugin-ovl && \
+    yum -y install java
+CMD java -jar /tmp/$APP_NAME
+EXPOSE 9999
+```
+
+<i><b>docker-compose.yml::</b></i>
+```docker-compose
+version: '2'
+services:
+ deploy:
+    build:
+      context: .
+      dockerfile: deploy.Dockerfile
+    expose: [ "8080" ]
+    ports: [ "0.0.0.0:9999:8080" ]    
+```
+
+<i><b>Jenkinsfile:</b></i>
+<img src=pic/9.png />
+
+<i><b>Jenkins job result:</b></i>
+<img src=pic/10.png />
+
+<i><b>Jenkins job log:</b></i>
+<img src=pic/11.png />
+
 
     
     
@@ -66,6 +103,6 @@ ENV PATH /root/.sdkman/candidates/gradle/3.5/bin/:$PATH
 
     
     
-    Configure a job to run just built Spring Boot app with docker-compose
+    
 
 
