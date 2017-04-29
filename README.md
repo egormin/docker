@@ -145,6 +145,31 @@ http {
 2. With ```docker-compose```:
     - Create ```docker-compose.yml``` file to build containers from previos task
     - Run "environment" in daemon mode
+    
+ <i><b>docker-compose.yml:</b></i>
+```docker-compose
+version: '2'
+services:
+ application:
+    build:
+      context: .
+      dockerfile: application.Dockerfile
+ tomcat:
+    build:
+      context: .
+      dockerfile: tomcat.Dockerfile
+    depends_on: [ "application" ]
+    volumes_from: [ "application" ]
+    expose: [ "8080" ]
+ nginx:
+    build:
+      context: .
+      dockerfile: web.Dockerfile
+    depends_on: [ "tomcat" ]
+    expose: [ "80" ]   
+ports: [ "0.0.0.0:8080:80" ]
+```
+    
 3. Create own branch (epam login without @epam.com, in lowercase)
 4. Create PR with description of reported task
 6. All needed resources (if they are) must be placed into ```/resources``` folder
