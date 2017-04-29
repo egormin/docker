@@ -42,11 +42,12 @@ CMD sleep infinity
 ```
     
 - Run these Images so that [http://localhost/sample](http://localhost/sample) shows ```hello world``` page
-<img src=pic/docker ps.png />
+<img src='pic/docker ps.png' />
 <img src=pic/docker-compose_result.png />
 <img src=pic/result.png />
 
 - ```Nginx``` container forwards http requests to ```Tomcat``` container; Only ```nginx``` container exposes port (80)
+
 <i><b>config/nginx.conf:</b></i>
 ```nginx.conf
 # For more information on configuration, see:
