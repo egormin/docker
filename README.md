@@ -3,6 +3,9 @@
 
 `docker build -t ansible -f ansible.Dockerfile .`
 
+<img src="report/ansible1.png">
+<img src="report/ansible2.png">
+
 2. Launch Jenkins from [official image](https://hub.docker.com/_/jenkins/)
 
 How to use this image
