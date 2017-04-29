@@ -37,7 +37,6 @@ $ ansible-playbook playbook.yml
   }
 ```
 ---
-Task2.
 # Ilya khamiakou
 ---
 # 1.ANSIBLE
@@ -92,3 +91,84 @@ ansible-playbook playbook.yml
 ```
 
 ![alt tag](https://raw.githubusercontent.com/MNTLab/docker/docker-2/ilya_khamiakou/docker-2/pics/ansibleplaybookrun.png)
+---
+# Jenkins
+```
+docker pull jenkins
+```
+## Connect host as a node.
+### Steps: 
+ - create user jenkins
+ - run: ```sudo docker exec -it jenkins bash``` >> ```ssh-keygen -t rsa```
+ - copy public key to jenkins auth hosts
+ - copy private key as a key and paste in "enter directly" in jenkins node config 
+ ![alt tag](https://raw.githubusercontent.com/MNTLab/docker/docker-2/ilya_khamiakou/docker-2/pics/node.png)
+---
+# Gradle
+[gradle.Dockerfile]( https://github.com/MNTLab/docker/blob/docker-2/ilya_khamiakou/docker-2/gradle.Dockerfile):
+```docker
+FROM sbeliakou/centos:7.2
+MAINTAINER ilya_khamiakou
+RUN yum install -y yum-plugin-ovl && \
+    yum -y install java unzip zip which && \
+    yum install git java-1.8.0-openjdk-devel -y && \
+    curl -s "https://get.sdkman.io" | bash && \
+    source "$HOME/.sdkman/bin/sdkman-init.sh" && \
+    sdk install gradle 3.5
+ENV PATH=$PATH:/root/.sdkman/candidates/gradle/current/bin 
+```
+ - build: ```$docker build -t gradle -f gradle.Dockerfile .``` - ok
+---
+#  Spring-boot application
+[spring.Dockerfile]( https://github.com/MNTLab/docker/blob/docker-2/ilya_khamiakou/docker-2/spring.Dockerfile):
+```docker
+FROM sbeliakou/centos:7.2
+MAINTAINER ilya_khamiakou
+ADD gs-spring-boot-0.1.0.jar /opt/
+RUN yum install -y yum-plugin-ovl && \
+    yum -y install java
+EXPOSE 8080
+CMD java -jar /opt/gs-spring-boot-0.1.0.jar
+```
+---
+# Spring Docker-compose
+[docker-compose.yml.spring]( https://github.com/MNTLab/docker/blob/docker-2/ilya_khamiakou/docker-2/docker-compose.yml.spring):
+```yml
+version: '3
+services:
+ deploy:
+    build:
+      context: .
+      dockerfile: spring.Dockerfile
+    expose: [ "8080" ]
+ports: [ "0.0.0.0:8085:8080" ]
+```
+# Jenkinsfiles:
+ - Gradle + spring:
+```Jenkinsfile
+node('host ilya_khamiakou') {
+  stage ('gradle build'){
+       def gradle = docker.build 'gradle'
+  }
+  stage('Checking out') {
+	git ' https://github.com/spring-guides/gs-spring-boot.git'
+  }
+  stage('Build application'){
+        sh '''touch /opt/test/123.txt
+        cd initial
+        alias gradle='docker run --rm -v $(pwd):$(pwd) -w $(pwd) gradle gradle'
+        gradle build
+        cp build/libs/gs-spring-boot-0.1.0.jar /opt/test/
+        chmod +x ${WORKSPACE}/gs-spring-boot-0.1.0.jar'''
+  }
+}
+```
+ - Spring compose:
+```Jenkinsfile
+node('host ilya_khamiakou') {
+  stage ('dockercompose spring'){
+     sh ''' cd /opt/test/
+            docker-compose up -d'''
+  }
+}
+```
