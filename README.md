@@ -50,6 +50,7 @@ ENV PATH /root/.sdkman/candidates/gradle/3.5/bin/:$PATH
 #### 5.  Configure a job to build spring-boot application using gradle image buit in 3
 <i><b>Jenkinsfile:</b></i>
 <img src=pic/6.png />
+<img src=pic/6-5.png />
 
 <i><b>Jenkins job log:</b></i>
 <img src=pic/7.png />
