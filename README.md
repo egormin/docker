@@ -9,7 +9,7 @@ Home Task
 Using base docker image ***sbeliakou/centos:7.2***
 
 1. Wiht ```Dockerfiles```:
-    - Create Docker Image of ```nginx``` ([web.Dockerfile](/web.Dockerfile))<br>
+- Create Docker Image of ```nginx``` ([web.Dockerfile](/web.Dockerfile))<br><br>
 <i><b>web.Dockerfile:</b></i>
 ```web.Dockerfile
 FROM sbeliakou/centos:7.2
@@ -19,7 +19,8 @@ COPY configs/nginx.conf /etc/nginx/nginx.conf
 EXPOSE 80
 CMD ["nginx", "-g", "daemon off;"]
 ```
-    - Create Docker Image of ```Tomcat 7``` ([tomcat.Dockerfile](/tomcat.Dockerfile))
+- Create Docker Image of ```Tomcat 7``` ([tomcat.Dockerfile](/tomcat.Dockerfile))<br><br>
+    
 <i><b>tomcat.Dockerfile:</b></i>
 ```tomcat.Dockerfile
 FROM sbeliakou/centos:7.2
