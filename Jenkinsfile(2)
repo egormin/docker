@@ -1,6 +1,5 @@
 node('Docker') {
   stage ('Building Docker image'){
-       git 'https://github.com/heorhivysotski/docker.git'
        def gradle = docker.build 'gradle'
   }
   stage('Checking out') {
