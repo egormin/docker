@@ -10,7 +10,24 @@ Using base docker image ***sbeliakou/centos:7.2***
 
 1. Wiht ```Dockerfiles```:
     - Create Docker Image of ```nginx``` ([web.Dockerfile](/web.Dockerfile))
+<i><b>web.Dockerfile:</b></i>
+```web.Dockerfile
+FROM sbeliakou/centos:7.2
+MAINTAINER Yahor Skrabkou (yahor_skrabkou@epam.com)
+RUN yum install -y nginx
+COPY configs/nginx.conf /etc/nginx/nginx.conf
+EXPOSE 80
+CMD ["nginx", "-g", "daemon off;"]
+```
     - Create Docker Image of ```Tomcat 7``` ([tomcat.Dockerfile](/tomcat.Dockerfile))
+<i><b>tomcat.Dockerfile:</b></i>
+```tomcat.Dockerfile
+FROM sbeliakou/centos:7.2
+MAINTAINER Yahor Skrabkou (yahor_skrabkou@epam.com)
+RUN yum install -y tomcat; yum clean all
+EXPOSE 8080
+CMD /usr/libexec/tomcat/server start 
+```
     - Create Docker Image (Data Volume) with [```hello world```](https://tomcat.apache.org/tomcat-7.0-doc/appdev/sample/sample.war) application for Tomcat ([application.Dockerfile](application.Dockerfile))
     - Run these Images so that [http://localhost/sample](http://localhost/sample) shows ```hello world``` page
     - ```Nginx``` container forwards http requests to ```Tomcat``` container; Only ```nginx``` container exposes port (80)
