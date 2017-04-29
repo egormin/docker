@@ -9,7 +9,7 @@ Home Task
 Using base docker image ***sbeliakou/centos:7.2***
 
 1. Wiht ```Dockerfiles```:
-    - Create Docker Image of ```nginx``` ([web.Dockerfile](/web.Dockerfile))
+    - Create Docker Image of ```nginx``` ([web.Dockerfile](/web.Dockerfile))<br>
 <i><b>web.Dockerfile:</b></i>
 ```web.Dockerfile
 FROM sbeliakou/centos:7.2
