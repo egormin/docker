@@ -36,3 +36,6 @@ $ ansible-playbook playbook.yml
     }
   }
 ```
+
+### Dockerized Zabbix
+[Solution](https://www.zabbix.org/wiki/Dockerized_Zabbix)
