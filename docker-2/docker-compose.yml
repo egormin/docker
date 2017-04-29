@@ -1,0 +1,12 @@
+version: '2'
+services:
+  deploy:
+    build:
+      context: .
+      dockerfile: spring.Dockerfile
+    ports: 
+      - 0.0.0.0:8081:8080
+      - 0.0.0.0:12550:12550
+      - 0.0.0.0:12551:12551
+    container_name: spring-runner
+
