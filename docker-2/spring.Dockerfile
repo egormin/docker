@@ -1,4 +1,4 @@
-ROM sbeliakou/centos:7.2
+FROM sbeliakou/centos:7.2
 MAINTAINER ilya_khamiakou
 ADD gs-spring-boot-0.1.0.jar /opt/
 RUN yum install -y yum-plugin-ovl && \
