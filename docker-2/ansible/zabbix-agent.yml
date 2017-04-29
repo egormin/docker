@@ -1,5 +1,5 @@
 - name: Zabbix agent Playbook
-  hosts: localhost
+  hosts: springhost
 
   tasks:
   - name: Ensure zabbix repo installed
@@ -10,28 +10,18 @@
     with_items:
       - zabbix-agent
       - zabbix-java-gateway
-      - mc
 
   - name: Ensure zabbix-agent config exists
-    file: src=/home/student/docker2/zabbix/zabbix_agentd.conf dest=/etc/zabbix/zabbix_agentd.conf
-    become: yes
-    become_user: root
+    file: src=/home/student/docker2/zabbix/zabbix_agentd.conf dest=/etc/zabbix/zabbix_agentd.conf state=touch
 
   - name: Ensure zabbix-agent config exists
-    file: src=/home/student/docker2/zabbix/zabbix_java_gateway.conf  dest=/etc/zabbix/zabbix_java_gateway.conf 
-    become: yes
-    become_user: root
+    file: src=/home/student/docker2/zabbix/zabbix_java_gateway.conf  dest=/etc/zabbix/zabbix_java_gateway.conf state=touch
 
   - name: Ensure zabbix-agent config exists
-    file: src=/home/student/docker2/zabbix/zabbix_server.conf  dest=/etc/zabbix/zabbix_server.conf 
-    become: yes
-    become_user: root
+    file: src=/home/student/docker2/zabbix/zabbix_server.conf  dest=/etc/zabbix/zabbix_server.conf state=touch
 
   - name: Ensure zabbix agent is running
-    become: yes
-    become_user: root
     service: name={{ item }} state=started enabled=yes
     with_items:
       - zabbix-agent
       - zabbix-java-gateway
-      - zabbix-agent
