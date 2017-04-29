@@ -74,7 +74,7 @@ CMD java -jar /tmp/$APP_NAME
 EXPOSE 9999
 ```
 
-<i><b>docker-compose.yml::</b></i>
+<i><b>docker-compose.yml::</b></i><br>
 ```docker-compose
 version: '2'
 services:
@@ -86,13 +86,13 @@ services:
     ports: [ "0.0.0.0:9999:8080" ]    
 ```
 
-<i><b>Jenkinsfile:</b></i>
+<i><b>Jenkinsfile:</b></i><br>
 <img src=pic/9.png />
 
-<i><b>Jenkins job result:</b></i>
+<i><b>Jenkins job result:</b></i><br>
 <img src=pic/10.png />
 
-<i><b>Jenkins job log:</b></i>
+<i><b>Jenkins job log:</b></i><br>
 <img src=pic/11.png />
 
 
