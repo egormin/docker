@@ -1,0 +1,7 @@
+version: '2'
+services:
+ deploy:
+    build:
+      context: .
+      dockerfile: deploy.Dockerfile
+    ports: [ "18080:8080" ]
