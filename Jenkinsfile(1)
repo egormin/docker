@@ -1,0 +1,6 @@
+node('Docker') {
+  stage ('Deploy application'){
+     sh ''' cd /opt/test/
+            docker-compose up -d'''
+  }
+}
