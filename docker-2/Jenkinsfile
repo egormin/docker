@@ -10,6 +10,19 @@ node('host') {
 		cd initial
 		gradle build'''
 	}
+	stage('\u27A1 Packaging and Publishing results') {
+		env.Stage = 'Packaging and Publishing results'
+		archiveArtifacts 'initial/build/libs/gs-spring-boot-0.1.0.jar'
+    }
+        stage('\u27A1 Running app') {
+		env.Stage = 'Running app'
+        git branch: 'docker-2/siarhei_hreben', changelog: false, poll: false, url: 'https://github.com/MNTLab/docker.git'
+        sh '''
+        cp initial/build/libs/gs-spring-boot-0.1.0.jar docker-2/
+        cd docker-2
+        docker-compose up -d
+        '''
+    }
 }       // node end
 } catch (hudson.AbortException exc) {
         env.Msg = """
