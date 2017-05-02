@@ -1,0 +1,25 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<flow-definition plugin="workflow-job@2.10">
+  <description></description>
+  <keepDependencies>false</keepDependencies>
+  <properties>
+    <org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+      <triggers/>
+    </org.jenkinsci.plugins.workflow.job.properties.PipelineTriggersJobProperty>
+  </properties>
+  <definition class="org.jenkinsci.plugins.workflow.cps.CpsFlowDefinition" plugin="workflow-cps@2.30">
+    <script>node(&apos;slave&apos;) {
+stage(&apos;Checking out&apos;) {
+git &apos; https://github.com/spring-guides/gs-spring-boot.git&apos;
+}
+stage(&apos;Build application&apos;){
+sh &apos;&apos;&apos;ls -la
+cd initial
+alias gradle=&apos;docker run --rm -v $(pwd):$(pwd) -w $(pwd) gradle gradle&apos;
+gradle build&apos;&apos;&apos;
+}
+}</script>
+    <sandbox>true</sandbox>
+  </definition>
+  <triggers/>
+</flow-definition>
